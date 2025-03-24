@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-Ky-7pX" userLabel="Name">
-                        <rect key="frame" x="145" y="2" width="193" height="40"/>
+                        <rect key="frame" x="145" y="2" width="200" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,28 +37,31 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvK-lo-V7B">
-                        <rect key="frame" x="342" y="2" width="51" height="40"/>
-                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4g-XU-5BT">
+                        <rect key="frame" x="349" y="2" width="42" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="pvK-lo-V7B" firstAttribute="top" secondItem="45E-hZ-sao" secondAttribute="top" constant="2" id="0M4-dw-Hju"/>
+                    <constraint firstItem="B4g-XU-5BT" firstAttribute="top" secondItem="45E-hZ-sao" secondAttribute="top" constant="2" id="12C-PA-TQ4"/>
+                    <constraint firstItem="B4g-XU-5BT" firstAttribute="leading" secondItem="pVY-Ky-7pX" secondAttribute="trailing" constant="4" id="1A5-mT-yQ6"/>
+                    <constraint firstAttribute="bottom" secondItem="B4g-XU-5BT" secondAttribute="bottom" constant="2" id="CO0-dR-UQE"/>
                     <constraint firstAttribute="bottom" secondItem="pVY-Ky-7pX" secondAttribute="bottom" constant="2" id="F9S-yI-Max"/>
                     <constraint firstItem="pVY-Ky-7pX" firstAttribute="top" secondItem="45E-hZ-sao" secondAttribute="top" constant="2" id="FSa-CI-ru8"/>
                     <constraint firstAttribute="bottom" secondItem="Ik0-m6-XSg" secondAttribute="bottom" constant="2" id="OYb-Xa-Iwf"/>
                     <constraint firstItem="CG4-Uf-2PN" firstAttribute="top" secondItem="45E-hZ-sao" secondAttribute="top" constant="2" id="T1c-a3-BMN"/>
                     <constraint firstAttribute="bottom" secondItem="CG4-Uf-2PN" secondAttribute="bottom" constant="2" id="VOc-PD-6Sf"/>
                     <constraint firstItem="Ik0-m6-XSg" firstAttribute="leading" secondItem="45E-hZ-sao" secondAttribute="leading" constant="2" id="YVC-Y9-1Ty"/>
+                    <constraint firstAttribute="trailing" secondItem="B4g-XU-5BT" secondAttribute="trailing" constant="2" id="blw-K6-MXo"/>
                     <constraint firstItem="pVY-Ky-7pX" firstAttribute="leading" secondItem="CG4-Uf-2PN" secondAttribute="trailing" constant="4" id="eLg-EP-heF"/>
-                    <constraint firstAttribute="bottom" secondItem="pvK-lo-V7B" secondAttribute="bottom" constant="2" id="h9F-lf-mhh"/>
                     <constraint firstItem="CG4-Uf-2PN" firstAttribute="leading" secondItem="Ik0-m6-XSg" secondAttribute="trailing" constant="4" id="lSp-wp-D13"/>
-                    <constraint firstAttribute="trailing" secondItem="pvK-lo-V7B" secondAttribute="trailing" constant="2" id="lVY-mS-w8t"/>
                     <constraint firstItem="Ik0-m6-XSg" firstAttribute="top" secondItem="45E-hZ-sao" secondAttribute="top" constant="2" id="mD7-q6-tFv"/>
-                    <constraint firstItem="pvK-lo-V7B" firstAttribute="leading" secondItem="pVY-Ky-7pX" secondAttribute="trailing" constant="4" id="sDy-DS-T5X"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="followSwitch" destination="pvK-lo-V7B" id="IXk-Q0-qp6"/>
+                <outlet property="followLabel" destination="B4g-XU-5BT" id="Za4-Wf-KeS"/>
                 <outlet property="nameLabel" destination="pVY-Ky-7pX" id="CYg-gT-lVT"/>
                 <outlet property="repLabel" destination="Ik0-m6-XSg" id="Pkk-aT-NUc"/>
                 <outlet property="userImageView" destination="CG4-Uf-2PN" id="dTU-SG-06h"/>

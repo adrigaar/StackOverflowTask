@@ -1,16 +1,21 @@
+import Foundation
 
-import UIKit
-
-internal struct User: Codable {
+class User {
     let id: Int
     let name: String
-    let pfpUrl: String
     let rep: Int
+    let pfpUrl: String
+    var isFollowed: Bool
     
-    enum CodingKeys: String, CodingKey {
-        case id = "user_id"
-        case name = "display_name"
-        case pfpUrl = "profile_image"
-        case rep = "reputation"
+    init(fromUserData userData: UserData) {
+        self.id = userData.id
+        self.name = userData.name
+        self.rep = userData.rep
+        self.pfpUrl = userData.pfpUrl
+        self.isFollowed = false //Pull this from persistence
+    }
+    
+    func followToggled() {
+        isFollowed.toggle()
     }
 }

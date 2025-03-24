@@ -13,7 +13,7 @@
 		0FB870A52CDAB87700F8082B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB870A32CDAB87700F8082B /* Main.storyboard */; };
 		0FB870A72CDAB87900F8082B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FB870A62CDAB87900F8082B /* Assets.xcassets */; };
 		0FB870AA2CDAB87900F8082B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB870A82CDAB87900F8082B /* LaunchScreen.storyboard */; };
-		0FB870D82D91565F00F8082B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870D72D91565F00F8082B /* User.swift */; };
+		0FB870D82D91565F00F8082B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870D72D91565F00F8082B /* UserData.swift */; };
 		0FB870DA2D91568A00F8082B /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870D92D91568A00F8082B /* UserTests.swift */; };
 		0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */; };
 		0FB870DF2D915A3E00F8082B /* NetworkHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */; };
@@ -23,6 +23,7 @@
 		0FFA375D2D9188760057917A /* GetUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA375C2D9188760057917A /* GetUserResponse.swift */; };
 		0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */; };
 		0FFA37622D9198020057917A /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFA37612D9198020057917A /* UserTableViewCell.xib */; };
+		0FFA37642D91AF9D0057917A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA37632D91AF9D0057917A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		0FB870A92CDAB87900F8082B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FB870AB2CDAB87900F8082B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FB870B02CDAB87A00F8082B /* StackOverflow TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StackOverflow TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FB870D72D91565F00F8082B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0FB870D72D91565F00F8082B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0FB870D92D91568A00F8082B /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlerTests.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		0FFA375C2D9188760057917A /* GetUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserResponse.swift; sourceTree = "<group>"; };
 		0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0FFA37612D9198020057917A /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		0FFA37632D91AF9D0057917A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +125,9 @@
 		0FB870D62D91565100F8082B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0FB870D72D91565F00F8082B /* User.swift */,
+				0FB870D72D91565F00F8082B /* UserData.swift */,
 				0FFA375C2D9188760057917A /* GetUserResponse.swift */,
+				0FFA37632D91AF9D0057917A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,11 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FB870D82D91565F00F8082B /* User.swift in Sources */,
+				0FB870D82D91565F00F8082B /* UserData.swift in Sources */,
 				0FB870A22CDAB87700F8082B /* ViewController.swift in Sources */,
 				0FB8709E2CDAB87700F8082B /* AppDelegate.swift in Sources */,
 				0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */,
 				0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */,
+				0FFA37642D91AF9D0057917A /* User.swift in Sources */,
 				0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */,
 				0FB870A02CDAB87700F8082B /* SceneDelegate.swift in Sources */,
 				0FFA375D2D9188760057917A /* GetUserResponse.swift in Sources */,

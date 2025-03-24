@@ -14,7 +14,7 @@ final class NetworkHandlerTests: XCTestCase {
      */
     
     var sut: NetworkHandling!
-    let defaultUserData: Data = try! JSONEncoder().encode((GetUserResponse(items: [User(id: 1, name: "Joe", pfpUrl: "", rep: 1)])))
+    let defaultUserData: Data = try! JSONEncoder().encode((GetUserResponse(items: [UserData(id: 1, name: "Joe", pfpUrl: "", rep: 1)])))
     
     override func setUp() {
         sut = NetworkHandler(MockURLSession(desiredResponse: .success(defaultUserData)))

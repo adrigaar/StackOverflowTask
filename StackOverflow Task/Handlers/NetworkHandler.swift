@@ -33,8 +33,12 @@ internal class NetworkHandler: NetworkHandling {
             
             do {
                 print(data)
-                let result = try JSONDecoder().decode(GetUserResponse.self, from: data)
-                completion(.success(result.items))
+                let users = try JSONDecoder().decode(GetUserResponse.self, from: data)
+                    .items
+                    .map({ userData in
+                        User(fromUserData: userData)
+                    })
+                completion(.success(users))
             } catch {
                 completion(.failure(NetworkError.unableToParseData))
             }

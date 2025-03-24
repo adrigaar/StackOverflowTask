@@ -10,15 +10,16 @@ final class UserTests: XCTestCase {
         - Profile Picture
         - Reputation
      
-     Users shuld be created from data retrieved from a network call
+     Users should be created from data retrieved from a network call
      */
     
     var sut: User!
     var networkHandler: NetworkHandling!
+    let defaultUser = User(fromUserData: UserData(id: 1, name: "testUser", pfpUrl: "", rep: 1))
     
     override func setUp() {
-        sut = User(id: 1, name: "testUser", pfpUrl: "", rep: 1)
-        networkHandler = MockNetworkHandler(userResult: .success([User(id: 1, name: "joe", pfpUrl: "", rep: 1)]))
+        sut = defaultUser
+        networkHandler = MockNetworkHandler(userResult: .success([defaultUser]))
     }
     
     func test_user_containsID() {
@@ -35,5 +36,11 @@ final class UserTests: XCTestCase {
     
     func test_user_containsReputation() {
         XCTAssertNotNil(sut.rep)
+    }
+    
+    func test_followToggled_updatesFollowBool() {
+        let initialFollow = sut.isFollowed
+        sut.followToggled()
+        XCTAssertNotEqual(sut.isFollowed, initialFollow)
     }
 }

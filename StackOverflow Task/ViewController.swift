@@ -7,10 +7,11 @@ class ViewController: UIViewController {
     
     var users: [User]?
     var networkHandler: NetworkHandling = NetworkHandler()
+    let cellIdentifier = "userCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
+        userTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         userTableView.dataSource = self
         userTableView.delegate = self
         getUsers()
@@ -24,7 +25,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserTableViewCell, let user = users?[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserTableViewCell, let user = users?[indexPath.row] else {
             return UITableViewCell()
         }
         networkHandler.getImage(from: user.pfpUrl) { result in
@@ -42,7 +43,14 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserTableViewCell, let user = users?[indexPath.row] else {
+            return
+        }
+        user.followToggled()
+        cell.toggleFollow()
+        DispatchQueue.main.async { [weak self] in
+            self?.userTableView.reloadData()
+        }
     }
 }
 

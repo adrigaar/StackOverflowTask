@@ -12,10 +12,11 @@ class User {
         self.name = userData.name
         self.rep = userData.rep
         self.pfpUrl = userData.pfpUrl
-        self.isFollowed = false //Pull this from persistence
+        self.isFollowed = FollowedHandler.shared.followedIds?.contains(userData.id) ?? false
     }
     
     func followToggled() {
         isFollowed.toggle()
+        FollowedHandler.shared.toggleStatusOf(id: id)
     }
 }

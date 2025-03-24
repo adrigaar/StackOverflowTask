@@ -24,6 +24,7 @@
 		0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */; };
 		0FFA37622D9198020057917A /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFA37612D9198020057917A /* UserTableViewCell.xib */; };
 		0FFA37642D91AF9D0057917A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA37632D91AF9D0057917A /* User.swift */; };
+		0FFA37662D91B9990057917A /* FollowedHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA37652D91B9990057917A /* FollowedHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0FFA37612D9198020057917A /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		0FFA37632D91AF9D0057917A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0FFA37652D91B9990057917A /* FollowedHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */,
 				0FB870E32D91634B00F8082B /* NetworkError.swift */,
+				0FFA37652D91B9990057917A /* FollowedHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */,
 				0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */,
 				0FFA37642D91AF9D0057917A /* User.swift in Sources */,
+				0FFA37662D91B9990057917A /* FollowedHandler.swift in Sources */,
 				0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */,
 				0FB870A02CDAB87700F8082B /* SceneDelegate.swift in Sources */,
 				0FFA375D2D9188760057917A /* GetUserResponse.swift in Sources */,

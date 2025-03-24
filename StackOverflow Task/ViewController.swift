@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
     
-    var users: [Users]!
+//    var users: [Users]!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,7 @@ final class UserTests: XCTestCase {
     var sut: User!
     
     override func setUp() {
-        sut = User()
+        sut = User(name: "testUser")
     }
     
     func user_containsName() {

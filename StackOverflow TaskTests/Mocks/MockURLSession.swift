@@ -2,9 +2,9 @@
 import Foundation
 
 internal class MockURLSession: URLSessionHandling {
-    let desiredResponse: Result<[User], Error>
+    let desiredResponse: Result<GetUserResponse, Error>
     
-    init(desiredResponse: Result<[User], Error>) {
+    init(desiredResponse: Result<GetUserResponse, Error>) {
         self.desiredResponse = desiredResponse
     }
     
@@ -14,10 +14,10 @@ internal class MockURLSession: URLSessionHandling {
 }
 
 private class MockURLSessionDataTask: URLSessionDataTask {
-    let desiredOutcome: Result<[User], Error>
+    let desiredOutcome: Result<GetUserResponse, Error>
     let completion: @Sendable (Data?, URLResponse?, Error?) -> Void
     
-    init(desiredOutcome: Result<[User], Error>, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) {
+    init(desiredOutcome: Result<GetUserResponse, Error>, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) {
         self.desiredOutcome = desiredOutcome
         self.completion = completion
     }

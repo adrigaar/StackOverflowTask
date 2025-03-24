@@ -16,7 +16,7 @@ final class NetworkHandlerTests: XCTestCase {
     var sut: NetworkHandling!
     
     override func setUp() {
-        sut = NetworkHandler(MockURLSession(desiredResponse: .success([User(id: 1, name: "Joe", pfpUrl: "", rep: 1)])))
+        sut = NetworkHandler(MockURLSession(desiredResponse: .success(GetUserResponse(items: [User(id: 1, name: "Joe", pfpUrl: "", rep: 1)]))))
     }
     
     func test_networkHandler_returnsData_whenGetUsersIsCalledWithoutParameters() {

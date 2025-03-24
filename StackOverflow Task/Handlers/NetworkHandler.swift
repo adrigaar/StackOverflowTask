@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 internal protocol NetworkHandling {
     func getUsers(_ completion: @escaping (Result<[User], Error>) -> ())
@@ -40,6 +41,10 @@ internal class NetworkHandler: NetworkHandling {
         }.resume()
     }
     
+//    func getImage(from string: String) -> UIImage? {
+//        guard let
+//    }
+//
 }
 
 protocol URLSessionHandling {

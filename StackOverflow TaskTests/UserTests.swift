@@ -18,7 +18,7 @@ final class UserTests: XCTestCase {
     
     override func setUp() {
         sut = User(id: 1, name: "testUser", pfpUrl: "", rep: 1)
-        networkHandler = MockNetworkHandler(result: .success([User(id: 1, name: "joe", pfpUrl: "", rep: 1)]))
+        networkHandler = MockNetworkHandler(userResult: .success([User(id: 1, name: "joe", pfpUrl: "", rep: 1)]))
     }
     
     func test_user_containsID() {

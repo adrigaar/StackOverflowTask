@@ -1,13 +1,20 @@
 @testable import StackOverflow_Task
+import UIKit
 
 internal class MockNetworkHandler: NetworkHandling {
-    var result: Result<[StackOverflow_Task.User], Error>
+    let userResult: Result<[StackOverflow_Task.User], Error>
+    let imageResult: Result<UIImage, Error>
     
-    init(result: Result<[StackOverflow_Task.User], Error>) {
-        self.result = result
+    init(userResult: Result<[StackOverflow_Task.User], Error> = .failure(NetworkError.noData), imageResult: Result<UIImage, Error> = .failure(NetworkError.noData)) {
+        self.userResult = userResult
+        self.imageResult = imageResult
     }
     
     func getUsers(_ completion: @escaping (Result<[StackOverflow_Task.User], Error>) -> ()) {
-        completion(result)
+        completion(userResult)
+    }
+    
+    func getImage(from: String, _ completion: @escaping (Result<UIImage, Error>) -> ()) {
+        completion(imageResult)
     }
 }

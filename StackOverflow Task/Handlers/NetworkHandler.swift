@@ -3,6 +3,7 @@ import UIKit
 
 internal protocol NetworkHandling {
     func getUsers(_ completion: @escaping (Result<[User], Error>) -> ())
+    func getImage(from: String, _ completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
 private let getUsersUrl: URL? = URL(string: "https://api.stackexchange.com/2.2/users?page=1&pagesize=20&order=desc&sort=reputation&site=stackoverflow")
@@ -21,7 +22,6 @@ internal class NetworkHandler: NetworkHandling {
             return
         }
         let request = URLRequest(url: url)
-//        completion(.failure(NetworkError.noData))
         urlSession.dataTask(with: request) { data, _, error in
             if let error = error {
                 completion(.failure(NetworkError.responseError(error: error)))
@@ -41,10 +41,25 @@ internal class NetworkHandler: NetworkHandling {
         }.resume()
     }
     
-//    func getImage(from string: String) -> UIImage? {
-//        guard let
-//    }
-//
+    func getImage(from string: String, _ completion: @escaping (Result<UIImage, Error>) -> ()) {
+        guard let url = URL(string: string) else {
+            completion(.failure(NetworkError.invalidUrl))
+            return
+        }
+        let request = URLRequest(url: url)
+        urlSession.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+            guard let image = UIImage(data: data) else {
+                completion(.failure(NetworkError.unableToParseData))
+                return
+            }
+            completion(.success(image))
+        }.resume()
+    }
+
 }
 
 protocol URLSessionHandling {

@@ -2,9 +2,9 @@
 import Foundation
 
 internal class MockURLSession: URLSessionHandling {
-    let desiredResponse: Result<GetUserResponse, Error>
+    let desiredResponse: Result<Data, Error>
     
-    init(desiredResponse: Result<GetUserResponse, Error>) {
+    init(desiredResponse: Result<Data, Error>) {
         self.desiredResponse = desiredResponse
     }
     
@@ -14,10 +14,10 @@ internal class MockURLSession: URLSessionHandling {
 }
 
 private class MockURLSessionDataTask: URLSessionDataTask {
-    let desiredOutcome: Result<GetUserResponse, Error>
+    let desiredOutcome: Result<Data, Error>
     let completion: @Sendable (Data?, URLResponse?, Error?) -> Void
     
-    init(desiredOutcome: Result<GetUserResponse, Error>, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) {
+    init(desiredOutcome: Result<Data, Error>, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) {
         self.desiredOutcome = desiredOutcome
         self.completion = completion
     }
@@ -25,8 +25,7 @@ private class MockURLSessionDataTask: URLSessionDataTask {
     override func resume() {
         switch desiredOutcome {
         case .success(let success):
-            // Because the mock is ONLY used it unit tests, force unwrapping is actually preferable because it causes the code to fail faster and the exception to direct us to a useful place.
-            completion(try! JSONEncoder().encode(success), nil, nil)
+            completion(success, nil, nil)
         case .failure(let failure):
             completion(nil, nil, failure)
         }

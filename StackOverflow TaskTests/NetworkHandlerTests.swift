@@ -16,15 +16,14 @@ final class NetworkHandlerTests: XCTestCase {
     var sut: NetworkHandling!
     
     override func setUp() {
-        sut = NetworkHandler()
+        sut = NetworkHandler(MockURLSession(desiredResponse: .success([User(id: 1, name: "Joe", pfpUrl: "", rep: 1)])))
     }
     
-    func test_networkHandler_returnsData_whenGetIsCalledWithoutParameters() {
+    func test_networkHandler_returnsData_whenGetUsersIsCalledWithoutParameters() {
         sut.getUsers { result in
             switch result {
             case .success(let users):
                 XCTAssertNotNil(users.first)
-                break;
             case .failure(let error):
                 let networkError = error as? NetworkError
                 XCTAssertNotNil(networkError)
@@ -34,6 +33,21 @@ final class NetworkHandlerTests: XCTestCase {
     }
     
     func test_networkHandler_decodesDataIntoUsers_whenUserDataIsReturned() {
-        
-    }
+        sut.getUsers { result in
+            switch result {
+            case .success(let users):
+                guard let user = users.first else {
+                    XCTFail()
+                    return
+                }
+                XCTAssertEqual(user.id, 1)
+                XCTAssertEqual(user.name, "Joe")
+                XCTAssertEqual(user.pfpUrl, "")
+                XCTAssertEqual(user.rep, 1)
+            case .failure(let error):
+                let networkError = error as? NetworkError
+                XCTAssertNotNil(networkError)
+                XCTFail(networkError!.description)
+            }
+        }    }
 }

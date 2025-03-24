@@ -19,6 +19,7 @@
 		0FB870DF2D915A3E00F8082B /* NetworkHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */; };
 		0FB870E22D91615100F8082B /* MockNetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E12D91615100F8082B /* MockNetworkHandler.swift */; };
 		0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E32D91634B00F8082B /* NetworkError.swift */; };
+		0FB870E62D916BC700F8082B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E52D916BC700F8082B /* MockURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlerTests.swift; sourceTree = "<group>"; };
 		0FB870E12D91615100F8082B /* MockNetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkHandler.swift; sourceTree = "<group>"; };
 		0FB870E32D91634B00F8082B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0FB870E52D916BC700F8082B /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0FB870E12D91615100F8082B /* MockNetworkHandler.swift */,
+				0FB870E52D916BC700F8082B /* MockURLSession.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB870E62D916BC700F8082B /* MockURLSession.swift in Sources */,
 				0FB870DF2D915A3E00F8082B /* NetworkHandlerTests.swift in Sources */,
 				0FB870DA2D91568A00F8082B /* UserTests.swift in Sources */,
 				0FB870E22D91615100F8082B /* MockNetworkHandler.swift in Sources */,

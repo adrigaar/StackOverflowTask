@@ -1,12 +1,8 @@
-//
-//  User.swift
-//  StackOverflow Task
-//
-//  Created by Thomas on 24/03/2025.
-//
 
-import Foundation
+import UIKit
 
 struct User {
     let name: String
+    let pfp: UIImage
+    let rep: Int
 }

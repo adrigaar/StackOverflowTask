@@ -66,8 +66,15 @@ extension ViewController {
                 DispatchQueue.main.async {
                     self.userTableView.reloadData()
                 }
-            case .failure(_):
-                //handle failure to get users here
+            case .failure(let error):
+                let alert = UIAlertController(title: "Error", message: (error as? NetworkError)?.description ?? "an error occurred attempting to retrieve StackOverflow User Data", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+                    alert.dismiss(animated: true)
+                    self?.getUsers()
+                }))
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { _ in
+                    alert.dismiss(animated: true)
+                }))
                 break
             }
         }

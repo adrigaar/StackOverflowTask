@@ -4,7 +4,7 @@ internal protocol NetworkHandling {
     func getUsers(_ completion: @escaping (Result<[User], Error>) -> ())
 }
 
-private let getUsersUrl: URL? = URL(string: "http://api.stackexchange.com/2.2/users?page=1&pagesize=20&order=desc&sort=reputation&site=stackoverflow")
+private let getUsersUrl: URL? = URL(string: "https://api.stackexchange.com/2.2/users?page=1&pagesize=20&order=desc&sort=reputation&site=stackoverflow")
 
 internal class NetworkHandler: NetworkHandling {
     
@@ -31,8 +31,9 @@ internal class NetworkHandler: NetworkHandling {
             }
             
             do {
-                let result = try JSONDecoder().decode([User].self, from: data)
-                completion(.success(result))
+                print(data)
+                let result = try JSONDecoder().decode(GetUserResponse.self, from: data)
+                completion(.success(result.items))
             } catch {
                 completion(.failure(NetworkError.unableToParseData))
             }

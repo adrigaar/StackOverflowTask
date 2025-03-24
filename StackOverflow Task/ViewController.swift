@@ -5,11 +5,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
     
-    var users: [User]!
+    var users: [User]?
     var networkHandler: NetworkHandling = NetworkHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userTableView.dataSource = self
+        userTableView.delegate = self
         getUsers()
     }
     
@@ -17,12 +19,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return users?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        cell.textLabel?.text = users[indexPath.row].name
+        if let users = users {
+            cell.textLabel?.text = users[indexPath.row].name
+        }
         return cell
     }
 }
@@ -40,6 +44,9 @@ extension ViewController {
             switch result {
             case .success(let users):
                 self.users = users
+                DispatchQueue.main.async {
+                    self.userTableView.reloadData()
+                }
             case .failure(_):
                 //handle failure to get users here
                 break

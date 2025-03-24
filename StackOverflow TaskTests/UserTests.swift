@@ -32,9 +32,4 @@ final class UserTests: XCTestCase {
     func test_user_containsReputation() {
         XCTAssertNotNil(sut.rep)
     }
-    
-    func test_user_canBeCreatedFromData_whenNetworkCallReturnsData() {
-        
-    }
-    
 }

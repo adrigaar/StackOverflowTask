@@ -32,4 +32,8 @@ final class NetworkHandlerTests: XCTestCase {
             }
         }
     }
+    
+    func test_networkHandler_decodesDataIntoUsers_whenUserDataIsReturned() {
+        
+    }
 }

@@ -9,8 +9,8 @@ final class NetworkHandlerTests: XCTestCase {
      
      should abstract the logic so that it is easy to use and does not require specific knowledge
      
-        - "get" function with default to simply get the users as this is the default function of the app
-        - option to override default of "get" to stipulate own endpoint for data
+        - "getUser" function with default to simply get the users as this is the default function of the app
+        - "getImage" function to return a UIImage from a url
      */
     
     var sut: NetworkHandling!
@@ -49,5 +49,6 @@ final class NetworkHandlerTests: XCTestCase {
                 XCTAssertNotNil(networkError)
                 XCTFail(networkError!.description)
             }
-        }    }
+        }
+    }
 }

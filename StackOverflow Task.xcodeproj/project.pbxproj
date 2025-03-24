@@ -17,6 +17,8 @@
 		0FB870DA2D91568A00F8082B /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870D92D91568A00F8082B /* UserTests.swift */; };
 		0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */; };
 		0FB870DF2D915A3E00F8082B /* NetworkHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */; };
+		0FB870E22D91615100F8082B /* MockNetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E12D91615100F8082B /* MockNetworkHandler.swift */; };
+		0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E32D91634B00F8082B /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		0FB870D92D91568A00F8082B /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlerTests.swift; sourceTree = "<group>"; };
+		0FB870E12D91615100F8082B /* MockNetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkHandler.swift; sourceTree = "<group>"; };
+		0FB870E32D91634B00F8082B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		0FB870B32CDAB87A00F8082B /* StackOverflow TaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				0FB870E02D91613D00F8082B /* Mocks */,
 				0FB870D92D91568A00F8082B /* UserTests.swift */,
 				0FB870DE2D915A3E00F8082B /* NetworkHandlerTests.swift */,
 			);
@@ -118,8 +123,17 @@
 			isa = PBXGroup;
 			children = (
 				0FB870DC2D915A0C00F8082B /* NetworkHandler.swift */,
+				0FB870E32D91634B00F8082B /* NetworkError.swift */,
 			);
 			path = Handlers;
+			sourceTree = "<group>";
+		};
+		0FB870E02D91613D00F8082B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0FB870E12D91615100F8082B /* MockNetworkHandler.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +240,7 @@
 				0FB870D82D91565F00F8082B /* User.swift in Sources */,
 				0FB870A22CDAB87700F8082B /* ViewController.swift in Sources */,
 				0FB8709E2CDAB87700F8082B /* AppDelegate.swift in Sources */,
+				0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */,
 				0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */,
 				0FB870A02CDAB87700F8082B /* SceneDelegate.swift in Sources */,
 			);
@@ -237,6 +252,7 @@
 			files = (
 				0FB870DF2D915A3E00F8082B /* NetworkHandlerTests.swift in Sources */,
 				0FB870DA2D91568A00F8082B /* UserTests.swift in Sources */,
+				0FB870E22D91615100F8082B /* MockNetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

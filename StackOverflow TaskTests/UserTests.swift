@@ -18,22 +18,22 @@ final class UserTests: XCTestCase {
     
     override func setUp() {
         sut = User(name: "testUser", pfp: UIImage(), rep: 1)
-        networkHandler = MockNetworkHandler()
+        networkHandler = MockNetworkHandler(result: .success([User(name: "joe", pfp: UIImage(), rep: 1)]))
     }
     
-    func user_containsName() {
+    func test_user_containsName() {
         XCTAssertNotNil(sut.name)
     }
     
-    func user_containsPFP() {
+    func test_user_containsPFP() {
         XCTAssertNotNil(sut.pfp)
     }
     
-    func user_containsReputation() {
+    func test_user_containsReputation() {
         XCTAssertNotNil(sut.rep)
     }
     
-    func user_canBeCreatedFromData_whenNetworkCallReturnsData() {
+    func test_user_canBeCreatedFromData_whenNetworkCallReturnsData() {
         
     }
     

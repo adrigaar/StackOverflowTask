@@ -1,8 +1,12 @@
 
-protocol NetworkHandling {
-    
+internal protocol NetworkHandling {
+    func getUsers(_ completion: @escaping (Result<[User], Error>) -> ())
 }
 
-class NetworkHandler: NetworkHandling {
+internal class NetworkHandler: NetworkHandling {
+    
+    func getUsers(_ completion: @escaping (Result<[User], Error>) -> ()) {
+        completion(.failure(NetworkError.noData))
+    }
     
 }

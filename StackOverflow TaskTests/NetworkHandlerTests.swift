@@ -19,7 +19,7 @@ final class NetworkHandlerTests: XCTestCase {
         sut = NetworkHandler(MockURLSession(desiredResponse: .success(GetUserResponse(items: [User(id: 1, name: "Joe", pfpUrl: "", rep: 1)]))))
     }
     
-    func test_networkHandler_returnsData_whenGetUsersIsCalledWithoutParameters() {
+    func test_getUsers_returnsData_whenGetUsersIsCalledWithoutParameters() {
         sut.getUsers { result in
             switch result {
             case .success(let users):
@@ -32,7 +32,7 @@ final class NetworkHandlerTests: XCTestCase {
         }
     }
     
-    func test_networkHandler_decodesDataIntoUsers_whenUserDataIsReturned() {
+    func test_getUsers_decodesDataIntoUsers_whenUserDataIsReturned() {
         sut.getUsers { result in
             switch result {
             case .success(let users):
@@ -50,5 +50,9 @@ final class NetworkHandlerTests: XCTestCase {
                 XCTFail(networkError!.description)
             }
         }
+    }
+    
+    func test_getImage_returnsUIImage_fromValidURL() {
+        XCTAssertNotNil(NetworkHandler.getImage(from: "testURL"))
     }
 }

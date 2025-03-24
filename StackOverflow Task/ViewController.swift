@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "userCell")
         userTableView.dataSource = self
         userTableView.delegate = self
         getUsers()
@@ -23,16 +24,26 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        if let users = users {
-            cell.textLabel?.text = users[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserTableViewCell, let user = users?[indexPath.row] else {
+            return UITableViewCell()
+        }
+        networkHandler.getImage(from: user.pfpUrl) { result in
+            DispatchQueue.main.async {
+                if case .success(let image) = result {
+                    cell.setup(fromUser: user, withImage: image)
+                } else {
+                    cell.setup(fromUser: user)
+                }
+            }
         }
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension ViewController {

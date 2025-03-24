@@ -21,6 +21,8 @@
 		0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E32D91634B00F8082B /* NetworkError.swift */; };
 		0FB870E62D916BC700F8082B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB870E52D916BC700F8082B /* MockURLSession.swift */; };
 		0FFA375D2D9188760057917A /* GetUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA375C2D9188760057917A /* GetUserResponse.swift */; };
+		0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */; };
+		0FFA37622D9198020057917A /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFA37612D9198020057917A /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0FB870E32D91634B00F8082B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0FB870E52D916BC700F8082B /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		0FFA375C2D9188760057917A /* GetUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserResponse.swift; sourceTree = "<group>"; };
+		0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		0FFA37612D9198020057917A /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		0FB8709C2CDAB87700F8082B /* StackOverflow Task */ = {
 			isa = PBXGroup;
 			children = (
+				0FFA375E2D91969F0057917A /* Views */,
 				0FB870DB2D9159F900F8082B /* Handlers */,
 				0FB870D62D91565100F8082B /* Models */,
 				0FB8709D2CDAB87700F8082B /* AppDelegate.swift */,
@@ -140,6 +145,15 @@
 				0FB870E52D916BC700F8082B /* MockURLSession.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0FFA375E2D91969F0057917A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FFA375F2D9196BE0057917A /* UserTableViewCell.swift */,
+				0FFA37612D9198020057917A /* UserTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FFA37622D9198020057917A /* UserTableViewCell.xib in Resources */,
 				0FB870AA2CDAB87900F8082B /* LaunchScreen.storyboard in Resources */,
 				0FB870A72CDAB87900F8082B /* Assets.xcassets in Resources */,
 				0FB870A52CDAB87700F8082B /* Main.storyboard in Resources */,
@@ -247,6 +262,7 @@
 				0FB870A22CDAB87700F8082B /* ViewController.swift in Sources */,
 				0FB8709E2CDAB87700F8082B /* AppDelegate.swift in Sources */,
 				0FB870E42D91634B00F8082B /* NetworkError.swift in Sources */,
+				0FFA37602D9196BE0057917A /* UserTableViewCell.swift in Sources */,
 				0FB870DD2D915A0C00F8082B /* NetworkHandler.swift in Sources */,
 				0FB870A02CDAB87700F8082B /* SceneDelegate.swift in Sources */,
 				0FFA375D2D9188760057917A /* GetUserResponse.swift in Sources */,
